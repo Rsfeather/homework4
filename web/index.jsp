@@ -9,6 +9,6 @@
 <c:import url="/includes/header.html" />
         <a href="information.jsp">Check out a book</a>
         <br>
-        <a href="library.jsp">Manage checked out books</a>
+        <a href="books.jsp">Manage checked out books</a>
         
  <c:import url="/includes/footer.jsp" />
