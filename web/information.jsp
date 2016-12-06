@@ -8,9 +8,9 @@
 <c:import url="/includes/header.html" />
         <h2>Checkout a book</h2>
         
-         <form action="/library" method="post"> 
+         <form action="library" method="post"> 
     
-    
+    <input type="hidden" name="action" value="add"> 
         
         
         First Name:
@@ -20,7 +20,7 @@
         <input name="lastname" type="text"   autofocus required >
         <br>
        Email Address:
-        <input name="email" type="email"   required title="Your email address">
+        <input name="email" type="email"   required title="Your email address" required>
         <br>
        Book Title:
           <input name="title" type="text"   autofocus required >
