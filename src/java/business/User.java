@@ -6,7 +6,10 @@
 package business;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+
+ import java.util.GregorianCalendar;
+import java.util.Calendar;
+import java.util.Date;
 /**
  *
  * @author Tyler
@@ -17,20 +20,37 @@ public class User implements Serializable {
     private String email;
     private String title;
     private String name;
-    
+    private Date date; 
+    private int year;
+    private int day;
+    private int month;
+    private Date duedate;
+     GregorianCalendar currentDate = new GregorianCalendar();
+     Calendar cal = Calendar.getInstance();
     public User() {
         firstname ="";
         lastname ="";
         email ="";
         title ="";
+        name ="";
+       year = currentDate.get(Calendar.YEAR);
+        day = currentDate.get(Calendar.DATE);
+         month = currentDate.get(Calendar.MONTH);
+         date = new Date(year,month,day);
+         duedate = date;
+         
     }
     
-    public User (String firstname, String lastname, String email, String title) {
+    public User (String firstname, String lastname, String email, String title){
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.title = title;
         name = firstname + " " + lastname;
+        year = currentDate.get(Calendar.YEAR);
+        day = currentDate.get(Calendar.DATE);
+         month = currentDate.get(Calendar.MONTH);
+         date = new Date(year,month,day);
     }
     
     public String getFirstName() {
@@ -67,5 +87,12 @@ public class User implements Serializable {
     
     public String getName() {
         return name;
+    }
+    public Date getDate(){
+        return date;
+    }
+    public Date getDueDate(){
+        return duedate;
+        
     }
 }

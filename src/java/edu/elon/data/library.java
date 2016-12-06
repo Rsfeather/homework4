@@ -7,7 +7,7 @@ package edu.elon.data;
 
 import business.User;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +24,7 @@ public class library extends HttpServlet {
         String firstname="";
         String lastname="";
         String email="";
-        String title;
+        String title="";
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -69,7 +69,7 @@ public class library extends HttpServlet {
         request.setAttribute("user", user);
         HttpSession session = request.getSession();
         session.setAttribute("title", title);
-        session.setAttribute("date", "latter");
+        //session.setAttribute("date", email);
         }
         
      

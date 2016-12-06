@@ -30,4 +30,25 @@
           </section>
         </section>    
         </form>
+
+        <form action="library" method="post"> 
+    
+    <input type="hidden" name="action" value="add"> 
+        
+        
+        First Name:
+        <input name="firstname" type="text"   autofocus required >
+        <br>
+        Last Name
+        <input name="lastname" type="text"   autofocus required >
+        <br>
+       Email Address:
+        <input name="email" type="email"   required title="Your email address" required>
+        <br>
+       Book Title:
+          <input name="title" type="text"   autofocus required >
+          <br>
+        <input type="submit" value="Checkout" name="Checout"  >
+         </form>
+
 <c:import url="/includes/footer.jsp" />
