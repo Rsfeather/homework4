@@ -2,12 +2,68 @@
 
 
 
-
 body{
     
-font-family: PT Sans Pro,sans-serif 
+  font-family: PT Sans Pro,sans-serif 
  
- }
-    
-    
- 
+}
+
+.belk{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+}
+
+.belkLibrary{
+  font-size: 200%;
+  text-align: center;
+}
+
+h2{
+  padding-left: 20px;
+}
+
+.navButtons{
+  border-color: red;
+  border-style: solid;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.innerNavButtons{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+input{
+  margin-left: 5%;
+}
+
+#first{
+  margin-left: 35px;
+}
+
+#last{
+  margin-left: 36px;
+}
+
+#email{
+  margin-left: 10px;
+}
+
+#title{
+  margin-left: 43px;
+}
+
+#submit{
+  margin-left: 122px;
+}
+
+.footer{
+  margin-top: 30px;
+  text-align: center;
+  border-top-style: solid;
+  margin-bottom: 30px;
+}

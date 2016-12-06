@@ -6,8 +6,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:import url="/includes/header.html" />
-        <h2>Currently checked out books</h2>
         
+<section class="navButtons">
+    <h2>Currently checked out books</h2>
+    <section class="innerNavButtons">
   <c:forEach var="user" items="${users}">
   <tr>
     <td>${user.firstName}</td>
@@ -18,4 +20,7 @@
   </tr>
   </c:forEach>
         <a href="index.jsp">Return to front page</a>
+    </section>
+</section>
+
     <c:import url="/includes/footer.jsp" />

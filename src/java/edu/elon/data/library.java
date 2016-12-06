@@ -73,40 +73,7 @@ public class library extends HttpServlet {
         request.setAttribute("user", user);
        
         }
-        if (action2.equals("display_users")) {            
-            // get list of users
-            ArrayList<User> users = UserDB.selectUsers();            
-
-            // set as a request attribute
-            request.setAttribute("users", users);
-            // forward to index.jsp
-            url = "/index.jsp";
-        } 
-        else if (action2.equals("display_user")) {
-            // get user for specified email
-            String email = request.getParameter("email");
-            User user = UserDB.selectUser(email);
-            // set as session attribute
-             HttpSession session = request.getSession();
-            session.setAttribute("user",user);
-            // forward to user.jsp
-            url = "/user.jsp";
-        }
-      
-        else if (action2.equals("delete_user")) {
-            String email = request.getParameter("email");
-            User user = UserDB.selectUser(email);
-            UserDB.delete(user);
-            ArrayList<User> users = UserDB.selectUsers();
-            request.setAttribute("users", users);
-            // get the user for the specified email
-            
-            // delete the user            
-            // get current list of users
-            // set as request attribute
-            // forward to index.jsp
-            url="/index.jsp";
-        }
+       
         
         getServletContext()
                 .getRequestDispatcher(url)
