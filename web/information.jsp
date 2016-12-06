@@ -6,25 +6,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:import url="/includes/header.html" />
-        <h2>Checkout a book</h2>
         
-         <form action="/library" method="post"> 
+        
+        <form action="/library" method="post"> 
     
     
-        
-        
-        First Name:
-        <input name="firstname" type="text"   autofocus required >
-        <br>
-        Last Name
-        <input name="lastname" type="text"   autofocus required >
-        <br>
-       Email Address:
-        <input name="email" type="email"   required title="Your email address">
-        <br>
-       Book Title:
-          <input name="title" type="text"   autofocus required >
-          <br>
-        <input type="submit" value="Checkout" name="Checout"  >
-         </form>
+        <section class ="navButtons">
+            <h2>Checkout a book</h2>
+          <section class="innerNavButtons">
+            First Name:
+            <input id="first" name="firstname" type="text"   autofocus required >
+            <br>
+            Last Name:
+            <input id="last" name="lastname" type="text"   autofocus required >
+            <br>
+            Email Address:
+            <input id="email" name="email" type="email"   required title="Your email address">
+            <br>
+            Book Title:
+            <input id="title" name="title" type="text"   autofocus required >
+            <br>
+            <input id="submit" type="submit" value="Checkout" name="Checout"  >
+          </section>
+        </section>    
+        </form>
 <c:import url="/includes/footer.jsp" />
