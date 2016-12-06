@@ -11,7 +11,7 @@
          <form action="library" method="post"> 
     
     <input type="hidden" name="action" value="add"> 
-        
+        <input type="hidden" name="action2" value="display_users">
         
         First Name:
         <input name="firstname" type="text"   autofocus required >

@@ -8,5 +8,14 @@
 <c:import url="/includes/header.html" />
         <h2>Currently checked out books</h2>
         
+  <c:forEach var="user" items="${users}">
+  <tr>
+    <td>${user.firstName}</td>
+    <td>${user.lastName}</td>
+    <td>${user.email}</td>
+   
+    <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Delete</a></td>
+  </tr>
+  </c:forEach>
         <a href="index.jsp">Return to front page</a>
     <c:import url="/includes/footer.jsp" />

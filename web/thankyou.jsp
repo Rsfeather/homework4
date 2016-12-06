@@ -10,5 +10,5 @@
         checked out the book, ${user.title}.  Please note that this book is due back on ${user.date}
         a friendly reminder will be sent to you if you your book becomes overdue</p>
         
-        <a href="index.html">Return to front page</a>
+        <a href="index.jsp">Return to front page</a>
     <c:import url="/includes/footer.jsp" />

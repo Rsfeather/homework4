@@ -5,11 +5,13 @@
  */
 package business;
 
+
 import java.io.Serializable;
 
  import java.util.GregorianCalendar;
 import java.util.Calendar;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author Tyler
@@ -20,24 +22,30 @@ public class User implements Serializable {
     private String email;
     private String title;
     private String name;
-    private Date date; 
-    private int year;
-    private int day;
-    private int month;
-    private Date duedate;
-     GregorianCalendar currentDate = new GregorianCalendar();
-     Calendar cal = Calendar.getInstance();
+    GregorianCalendar currentDate = new GregorianCalendar();
+    private Calendar duedate= currentDate;
+    
+   
+     private Date date = Calendar.getInstance().getTime();
+    
+
+private  Calendar calendar = new GregorianCalendar();
+
+ 
+
+
+
+     SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+     
     public User() {
         firstname ="";
         lastname ="";
         email ="";
         title ="";
         name ="";
-       year = currentDate.get(Calendar.YEAR);
-        day = currentDate.get(Calendar.DATE);
-         month = currentDate.get(Calendar.MONTH);
-         date = new Date(year,month,day);
-         duedate = date;
+       
+        
+          duedate.add(Calendar.DAY_OF_YEAR, 14);
          
     }
     
@@ -47,10 +55,7 @@ public class User implements Serializable {
         this.email = email;
         this.title = title;
         name = firstname + " " + lastname;
-        year = currentDate.get(Calendar.YEAR);
-        day = currentDate.get(Calendar.DATE);
-         month = currentDate.get(Calendar.MONTH);
-         date = new Date(year,month,day);
+       duedate.add(Calendar.DAY_OF_YEAR, 14);
     }
     
     public String getFirstName() {
@@ -88,11 +93,18 @@ public class User implements Serializable {
     public String getName() {
         return name;
     }
-    public Date getDate(){
-        return date;
+    public void setName(String name){
+        this.name=name;
     }
-    public Date getDueDate(){
-        return duedate;
-        
+    public String getDate(){
+        return formatter.format(date);
     }
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    public String getDueDate(){
+       return formatter.format(duedate);
+       
+    }
+    
 }
