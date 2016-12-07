@@ -1,6 +1,6 @@
 
 <%-- 
-   Copyright Robert Feather, Kevin Kowalsky, Tyler Wilson
+   Copyright Robert Feather,  Tyler Wilson
 --%>
 
 

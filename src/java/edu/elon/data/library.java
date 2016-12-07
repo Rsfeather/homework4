@@ -2,6 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+Copyright Robert Feather,  Tyler Wilson
  */
 package edu.elon.data;
 
@@ -73,6 +74,7 @@ HttpSession session = request.getSession();
             lastname = request.getParameter("lastname");
             email = request.getParameter("email");
             title = request.getParameter("title");
+          // add 14 days to current date
             GregorianCalendar cal = new GregorianCalendar();
             cal.add(Calendar.MINUTE, 20160);
             Date date = cal.getTime();
@@ -111,12 +113,7 @@ HttpSession session = request.getSession();
             UserDB.delete(user);
             ArrayList<User> users = UserDB.selectUsers();
             request.setAttribute("users", users);
-            // get the user for the specified email
-            
-            // delete the user            
-            // get current list of users
-            // set as request attribute
-            // forward to index.jsp
+          
             url="/books.jsp";
         }
         

@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/homework4">
-<Resource name="jdbc/MySQLDS" auth="Containerr"
-        driverClassName="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://localhost:3306/fristapp"
-        username="root" password="mysqluser"
-        maxActive="100" maxIdle="30" maxWait="10000"
-        logAbandoned="true" removeAbandoned="true"
-        removeAbandonedTimeout="60" type="javax.sql.DataSource" /> 
-    
+  <Resource auth="Containerr" driverClassName="com.mysql.jdbc.Driver" logAbandoned="true" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/MySQLDS" password="mysqluser" removeAbandoned="true" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/fristapp" username="root"/>
 </Context>

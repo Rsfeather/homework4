@@ -3,6 +3,9 @@
     Created on : Dec 5, 2016, 10:51:33 AM
     Author     : rfeather
 --%>
+<%-- 
+   Copyright Robert Feather,  Tyler Wilson
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:import url="/includes/header.html" />

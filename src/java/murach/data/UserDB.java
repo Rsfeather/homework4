@@ -1,3 +1,5 @@
+/*Copyright Robert Feather,  Tyler Wilson*/
+
 package murach.data;
 
 import java.sql.*;

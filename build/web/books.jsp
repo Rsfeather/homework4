@@ -3,6 +3,9 @@
     Created on : Dec 5, 2016, 11:00:15 AM
     Author     : rfeather
 --%>
+<%-- 
+   Copyright Robert Feather,  Tyler Wilson
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:import url="/includes/header.html" />
@@ -19,7 +22,9 @@
           <th><b>Overdue</b></th>
           </tr>
   <c:forEach var="user" items="${users}">
-     
+     <%-- 
+   makes table of books
+--%>
           
       
       
@@ -30,6 +35,9 @@
    <td>${user.date}</td>
    <td>${user.overdue}</td>
     <td><a href="library?action=delete_user&amp;email=${user.email}">Delete</a></td>
+    <%-- 
+   calls delete function
+--%>
   </tr>
   </c:forEach>
   </table>
