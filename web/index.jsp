@@ -11,9 +11,10 @@
       <section class ="innerNavButtons">
         <a href="information.jsp">Check out a book</a>
         <br>
+         
+       <input type="hidden" name="action" value="display_users">
+       <a href="library" name="action" value="display_users"/> Manage checked out books</a>
         
-        <input type="hidden" name="action" value="display_users"> 
-        <a href="books.jsp">Manage checked out books</a>
       </section>
     </section>    
  <c:import url="/includes/footer.jsp" />

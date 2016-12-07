@@ -16,7 +16,7 @@
           <td><b>Book Title</b></td>
           <td><b>Due Date</b></td>
           <td><b>Overdue</b></td>
-  <c:forEach var="user" items="${users}">
+  <c:forEach var="users" items="${users}">
      
           
       </tr>
@@ -30,6 +30,7 @@
     <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Delete</a></td>
   </tr>
   </c:forEach>
+  <br>
         <a href="index.jsp">Return to front page</a>
     </section>
 </section>

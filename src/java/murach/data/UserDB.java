@@ -13,15 +13,15 @@ public class UserDB {
         PreparedStatement ps = null;
 
         String query
-                = "INSERT INTO User (name, email, title, date, overdue)"
+                = "INSERT INTO fristapp.User (name, email, title, date, overdue)"
                 + "VALUES (?, ?, ?, ?, ?)";
         try {
             ps = connection.prepareStatement(query);
             ps.setString(1, user.getName());
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getTitle());
-           ps.setString(4, user.getDate());
-           ps.setString(5, user.getOverdue());
+            ps.setString(4, user.getDate());
+            ps.setString(5, user.getOverdue());
             
             return ps.executeUpdate();
         } catch (SQLException e) {
@@ -40,7 +40,7 @@ public class UserDB {
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
 
-        String query = "DELETE FROM User "
+        String query = "DELETE FROM fristapp.User "
                 + "WHERE email = ?";
         try {
             ps = connection.prepareStatement(query);
@@ -62,7 +62,7 @@ public class UserDB {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT Email FROM User "
+        String query = "SELECT Email FROM fristapp.User "
                 + "WHERE email = ?";
         try {
             ps = connection.prepareStatement(query);
@@ -85,7 +85,7 @@ public class UserDB {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT * FROM User "
+        String query = "SELECT * FROM fristapp.User "
                 + "WHERE Email = ?";
         try {
             ps = connection.prepareStatement(query);
@@ -118,7 +118,7 @@ public class UserDB {
         PreparedStatement ps = null;
         ResultSet rs = null;
         ArrayList<User> users = new ArrayList();
-        String query = "SELECT * FROM User ";
+        String query = "SELECT * FROM fristapp.User ";
             try{
                 ps = connection.prepareStatement(query);
                 rs = ps.executeQuery();

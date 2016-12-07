@@ -7,19 +7,14 @@ package business;
 
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 
-
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 /**
  *
  * @author Tyler
  */
 public class User implements Serializable {
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String email;
     private String title;
     private String name;
@@ -27,59 +22,45 @@ public class User implements Serializable {
     private String date;
     private String overdue;
    
-     
-    
-
-
- SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-private Calendar c = Calendar.getInstance();
-
-
  
-
-
-
-     
      
     public User() {
-        firstname ="";
-        lastname ="";
+        firstName ="";
+        lastName ="";
         email ="";
         title ="";
         name ="";
        overdue = "false";
         date = null;
-          c.setTime(new Date()); 
-c.add(Calendar.DATE, 14); 
+        
     }
     
     public User (String firstname, String lastname, String email, String title, String date){
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstname;
+        this.lastName = lastname;
         this.email = email;
         this.title = title;
         this.date = date;
         name = firstname + " " + lastname;
        
        overdue = "false";
-       c.setTime(new Date()); 
-c.add(Calendar.DATE, 14); 
+       
     }
     
     public String getFirstName() {
-        return firstname;
+        return firstName;
     }
     
     public void setFirstName(String firstname) {
-        this.firstname = firstname;
+        this.firstName = firstname;
     }
     
     public String getLastName() {
-        return lastname;
+        return lastName;
     }
     
     public void setLastName(String lastname) {
-        this.lastname = lastname;
+        this.lastName = lastname;
     }
     
     public String getEmail() {
@@ -117,10 +98,5 @@ c.add(Calendar.DATE, 14);
     public String getOverdue(){
         return overdue;
     }
-    public Calendar getC() {
-        return c;
-    }
-    public void setDd(Calendar c){
-        this.c=c;
-    }
+   
 }

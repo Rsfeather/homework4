@@ -69,8 +69,8 @@ HttpSession session = request.getSession();
         } 
         else if (action.equals("add")) {
             // get parameters from the request
-            firstname = request.getParameter("first");
-            lastname = request.getParameter("last");
+            firstname = request.getParameter("firstname");
+            lastname = request.getParameter("lastname");
             email = request.getParameter("email");
             title = request.getParameter("title");
             GregorianCalendar cal = new GregorianCalendar();
@@ -93,7 +93,7 @@ HttpSession session = request.getSession();
             // set as a request attribute
             request.setAttribute("users", users);
             // forward to index.jsp
-            url = "/index.jsp";
+            url = "/books.jsp";
         } 
         else if (action.equals("display_user")) {
             // get user for specified email
