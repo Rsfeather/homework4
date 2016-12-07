@@ -16,7 +16,7 @@
             <section class="navButtons">
               <h2>Checkout a book</h2>
               <input type="hidden" name="action" value="add"> 
-              <input type="hidden" name="action2" value="display_users"> 
+             
                 <section class="innerNavButtons">
                   First Name:
                   <input id="first" name="firstname" type="text"   autofocus required >

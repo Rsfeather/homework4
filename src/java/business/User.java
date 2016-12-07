@@ -23,7 +23,7 @@ public class User implements Serializable {
     private String email;
     private String title;
     private String name;
- private Date dd;
+
     private String date;
     private String overdue;
    

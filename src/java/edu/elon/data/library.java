@@ -32,7 +32,7 @@ public class library extends HttpServlet {
         String lastname="";
         String email="";
         String title="";
-
+String fdate="";
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -58,7 +58,7 @@ HttpSession session = request.getSession();
         
         // get current action
         String action = request.getParameter("action");
-        String action2 = request.getParameter("action2");
+        
         if (action == null) {
             action = "join";  // default action
         }
@@ -78,10 +78,9 @@ HttpSession session = request.getSession();
             Date date = cal.getTime();
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             SimpleDateFormat format=new SimpleDateFormat("MM-dd-yyyy");
-            String fdate=format.format(sqlDate);
+             fdate=format.format(sqlDate);
             
-           //  LocalDate date=null;
-          //  date = DDate.setDate(date);
+           
                User user = new User(firstname,lastname,email,title,fdate);
         request.setAttribute("user", user);
        UserDB.insert(user);

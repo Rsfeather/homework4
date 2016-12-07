@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/ch12_ex2_userAdmin">
+<Context path="/homework4">
 <Resource name="jdbc/MySQLDS" auth="Containerr"
         driverClassName="com.mysql.jdbc.Driver"
         url="jdbc:mysql://localhost:3306/fristapp"

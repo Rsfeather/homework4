@@ -10,12 +10,23 @@
 <section class="navButtons">
     <h2>Currently checked out books</h2>
     <section class="innerNavButtons">
+         <tr>
+          <td><b>Patron Name</b></td>
+          <td><b>Email Address</b></td>
+          <td><b>Book Title</b></td>
+          <td><b>Due Date</b></td>
+          <td><b>Overdue</b></td>
   <c:forEach var="user" items="${users}">
+     
+          
+      </tr>
+      
   <tr>
-    <td>${user.firstName}</td>
-    <td>${user.lastName}</td>
+    <td>${user.name}</td>
     <td>${user.email}</td>
-   
+    <td>${user.title}</td>
+   <td>${user.date}</td>
+   <td>${user.overdue}</td>
     <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Delete</a></td>
   </tr>
   </c:forEach>

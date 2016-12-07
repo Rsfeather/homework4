@@ -13,8 +13,8 @@ public class UserDB {
         PreparedStatement ps = null;
 
         String query
-                = "INSERT INTO User (name, email, title, date, overdue ) "
-                + "VALUES (?, ?, ?,?,?)";
+                = "INSERT INTO User (name, email, title, date, overdue)"
+                + "VALUES (?, ?, ?, ?, ?)";
         try {
             ps = connection.prepareStatement(query);
             ps.setString(1, user.getName());
@@ -41,10 +41,10 @@ public class UserDB {
         PreparedStatement ps = null;
 
         String query = "DELETE FROM User "
-                + "WHERE Email = ?";
+                + "WHERE email = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, user.getEmail());
+            ps.setString(2, user.getEmail());
 
             return ps.executeUpdate();
         } catch (SQLException e) {
@@ -63,10 +63,10 @@ public class UserDB {
         ResultSet rs = null;
 
         String query = "SELECT Email FROM User "
-                + "WHERE Email = ?";
+                + "WHERE email = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, email);
+            ps.setString(2, email);
             rs = ps.executeQuery();
             return rs.next();
         } catch (SQLException e) {
@@ -89,7 +89,7 @@ public class UserDB {
                 + "WHERE Email = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, email);
+            ps.setString(2, email);
             rs = ps.executeQuery();
             User user = null;
             if (rs.next()) {
