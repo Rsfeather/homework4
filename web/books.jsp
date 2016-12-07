@@ -32,7 +32,7 @@
     <td><a href="library?action=delete_user&amp;email=${user.email}">Delete</a></td>
   </tr>
   </c:forEach>
-        </table>
+  </table>
   <br>
         <a href="index.jsp">Return to front page</a>
     </section>

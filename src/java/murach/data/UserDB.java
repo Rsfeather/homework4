@@ -66,7 +66,7 @@ public class UserDB {
                 + "WHERE email = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(2, email);
+            ps.setString(1, email);
             rs = ps.executeQuery();
             return rs.next();
         } catch (SQLException e) {
