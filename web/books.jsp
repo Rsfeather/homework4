@@ -10,16 +10,18 @@
 <section class="navButtons">
     <h2>Currently checked out books</h2>
     <section class="innerNavButtons">
+        <table>
          <tr>
-          <td><b>Patron Name</b></td>
-          <td><b>Email Address</b></td>
-          <td><b>Book Title</b></td>
-          <td><b>Due Date</b></td>
-          <td><b>Overdue</b></td>
-  <c:forEach var="users" items="${users}">
+          <th><b>Patron Name</b></th>
+          <th><b>Email Address</b></th>
+          <th><b>Book Title</b></th>
+          <th><b>Due Date</b></th>
+          <th><b>Overdue</b></th>
+          </tr>
+  <c:forEach var="user" items="${users}">
      
           
-      </tr>
+      
       
   <tr>
     <td>${user.name}</td>
@@ -27,9 +29,10 @@
     <td>${user.title}</td>
    <td>${user.date}</td>
    <td>${user.overdue}</td>
-    <td><a href="userAdmin?action=delete_user&amp;email=${user.email}">Delete</a></td>
+    <td><a href="library?action=delete_user&amp;email=${user.email}">Delete</a></td>
   </tr>
   </c:forEach>
+        </table>
   <br>
         <a href="index.jsp">Return to front page</a>
     </section>

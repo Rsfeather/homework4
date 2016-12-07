@@ -44,7 +44,7 @@ public class UserDB {
                 + "WHERE email = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(2, user.getEmail());
+            ps.setString(1, user.getEmail());
 
             return ps.executeUpdate();
         } catch (SQLException e) {
@@ -89,7 +89,7 @@ public class UserDB {
                 + "WHERE Email = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(2, email);
+            ps.setString(1, email);
             rs = ps.executeQuery();
             User user = null;
             if (rs.next()) {

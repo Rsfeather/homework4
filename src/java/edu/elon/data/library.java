@@ -32,7 +32,7 @@ public class library extends HttpServlet {
         String lastname="";
         String email="";
         String title="";
-String fdate="";
+        String fdate="";
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -53,7 +53,7 @@ String fdate="";
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
- String url = "/thankyou.jsp";
+ String url = "/index.jsp";
 HttpSession session = request.getSession();
         
         // get current action
@@ -84,7 +84,7 @@ HttpSession session = request.getSession();
                User user = new User(firstname,lastname,email,title,fdate);
         request.setAttribute("user", user);
        UserDB.insert(user);
-         
+         url="/thankyou.jsp";
         }
        if (action.equals("display_users")) {            
             // get list of users
@@ -117,7 +117,7 @@ HttpSession session = request.getSession();
             // get current list of users
             // set as request attribute
             // forward to index.jsp
-            url="/index.jsp";
+            url="/books.jsp";
         }
         
         getServletContext()
