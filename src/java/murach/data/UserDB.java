@@ -21,7 +21,8 @@ public class UserDB {
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getTitle());
            ps.setString(4, user.getDate());
-            ps.setString(5, user.getTitle());
+           ps.setString(5, user.getOverdue());
+            
             return ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
@@ -96,7 +97,8 @@ public class UserDB {
                 user.setName(rs.getString("name"));
                 user.setEmail(rs.getString("email"));
                     user.setTitle(rs.getString("title"));
-                    user.setDate(rs.getDate("date"));
+                   user.setDate(rs.getString("date"));
+                    user.setOverdue(rs.getString("overdue"));
             }
             return user;
         } catch (SQLException e) {
@@ -124,10 +126,10 @@ public class UserDB {
                 while (rs.next()){
                     user = new User();
                     user.setName(rs.getString("name"));
-                   
                     user.setEmail(rs.getString("email"));
                     user.setTitle(rs.getString("title"));
-                    user.setDate(rs.getDate("date"));
+                    user.setDate(rs.getString("date"));
+                    user.setOverdue(rs.getString("overdue"));
                     users.add(user);
                 }
                 return users;

@@ -5,8 +5,10 @@
  */
 package edu.elon.data;
 
+
 import business.User;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -17,6 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import murach.data.UserDB;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 @WebServlet(name = "library", urlPatterns = {"/library"})
 public class library extends HttpServlet {
 
@@ -49,7 +54,7 @@ public class library extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
  String url = "/thankyou.jsp";
-
+HttpSession session = request.getSession();
         
         // get current action
         String action = request.getParameter("action");
@@ -68,12 +73,53 @@ public class library extends HttpServlet {
             lastname = request.getParameter("last");
             email = request.getParameter("email");
             title = request.getParameter("title");
+            GregorianCalendar cal = new GregorianCalendar();
+            cal.add(Calendar.MINUTE, 20160);
+            Date date = cal.getTime();
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            SimpleDateFormat format=new SimpleDateFormat("MM-dd-yyyy");
+            String fdate=format.format(sqlDate);
             
-               User user = new User(firstname,lastname,email,title);
+           //  LocalDate date=null;
+          //  date = DDate.setDate(date);
+               User user = new User(firstname,lastname,email,title,fdate);
         request.setAttribute("user", user);
-       
+       UserDB.insert(user);
+         
         }
-       
+       if (action.equals("display_users")) {            
+            // get list of users
+            ArrayList<User> users = UserDB.selectUsers();            
+
+            // set as a request attribute
+            request.setAttribute("users", users);
+            // forward to index.jsp
+            url = "/index.jsp";
+        } 
+        else if (action.equals("display_user")) {
+            // get user for specified email
+            String email = request.getParameter("email");
+            User user = UserDB.selectUser(email);
+            // set as session attribute
+            session.setAttribute("user",user);
+            // forward to user.jsp
+            url = "/user.jsp";
+        }
+      
+        else if (action.equals("delete_user")) {
+            String email = request.getParameter("email");
+            User user = UserDB.selectUser(email);
+            UserDB.delete(user);
+            ArrayList<User> users = UserDB.selectUsers();
+            request.setAttribute("users", users);
+            // get the user for the specified email
+            
+            // delete the user            
+            // get current list of users
+            // set as request attribute
+            // forward to index.jsp
+            url="/index.jsp";
+        }
         
         getServletContext()
                 .getRequestDispatcher(url)

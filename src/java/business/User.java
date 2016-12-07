@@ -7,11 +7,12 @@ package business;
 
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 
- import java.util.GregorianCalendar;
+
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 /**
  *
  * @author Tyler
@@ -22,20 +23,23 @@ public class User implements Serializable {
     private String email;
     private String title;
     private String name;
-    GregorianCalendar currentDate = new GregorianCalendar();
-    private Calendar duedate= currentDate;
-    
+ private Date dd;
+    private String date;
+    private String overdue;
    
-     private Date date = Calendar.getInstance().getTime();
+     
     
 
-private  Calendar calendar = new GregorianCalendar();
+
+ SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+private Calendar c = Calendar.getInstance();
+
 
  
 
 
 
-     SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+     
      
     public User() {
         firstname ="";
@@ -43,19 +47,23 @@ private  Calendar calendar = new GregorianCalendar();
         email ="";
         title ="";
         name ="";
-       
-        
-          duedate.add(Calendar.DAY_OF_YEAR, 14);
-         
+       overdue = "false";
+        date = null;
+          c.setTime(new Date()); 
+c.add(Calendar.DATE, 14); 
     }
     
-    public User (String firstname, String lastname, String email, String title){
+    public User (String firstname, String lastname, String email, String title, String date){
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.title = title;
+        this.date = date;
         name = firstname + " " + lastname;
-       duedate.add(Calendar.DAY_OF_YEAR, 14);
+       
+       overdue = "false";
+       c.setTime(new Date()); 
+c.add(Calendar.DATE, 14); 
     }
     
     public String getFirstName() {
@@ -97,14 +105,22 @@ private  Calendar calendar = new GregorianCalendar();
         this.name=name;
     }
     public String getDate(){
-        return formatter.format(date);
+        return date;
     }
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
-    public String getDueDate(){
-       return formatter.format(duedate);
-       
+ 
+    public void setOverdue(String overdue){
+        this.overdue=overdue;
     }
-    
+    public String getOverdue(){
+        return overdue;
+    }
+    public Calendar getC() {
+        return c;
+    }
+    public void setDd(Calendar c){
+        this.c=c;
+    }
 }
