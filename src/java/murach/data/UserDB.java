@@ -15,7 +15,7 @@ public class UserDB {
         PreparedStatement ps = null;
 
         String query
-                = "INSERT INTO fristapp.User (name, email, title, date, overdue)"
+             = "INSERT INTO fristapp.User (name, email, title, date, overdue)"
                 + "VALUES (?, ?, ?, ?, ?)";
         try {
             ps = connection.prepareStatement(query);
@@ -114,7 +114,8 @@ public class UserDB {
     }
     
     public static ArrayList<User> selectUsers() {
-        // add code that returns an ArrayList<User> object of all users in the User table
+        // add code that returns an ArrayList<User> object of all
+        //users in the User table
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;

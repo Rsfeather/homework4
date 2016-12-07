@@ -15,7 +15,7 @@
         <br>
         
         
-        <a href="library?action=display_users&amp;">Manage checked out books</a>
+      <a href="library?action=display_users&amp;">Manage checked out books</a>
         <%-- 
   goes to servlet with action that calls display_user method
 --%>

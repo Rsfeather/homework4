@@ -34,7 +34,8 @@
     <td>${user.title}</td>
    <td>${user.date}</td>
    <td>${user.overdue}</td>
-    <td><a href="library?action=delete_user&amp;email=${user.email}">Delete</a></td>
+   <td><a href="library?action=delete_user&amp;email=${user.email}">Delete</a>
+   </td>
     <%-- 
    calls delete function
 --%>

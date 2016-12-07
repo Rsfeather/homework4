@@ -34,7 +34,8 @@ public class library extends HttpServlet {
         String email="";
         String title="";
         String fdate="";
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. 
+      //  Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -44,7 +45,7 @@ public class library extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+ protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         doPost(request, response);
@@ -52,7 +53,8 @@ public class library extends HttpServlet {
 
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, 
+            HttpServletResponse response)
             throws ServletException, IOException {
  String url = "/index.jsp";
 HttpSession session = request.getSession();

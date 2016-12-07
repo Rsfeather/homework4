@@ -54,7 +54,8 @@ private Date date2;
         }
     }
     
-    public User (String firstname, String lastname, String email, String title, String date){
+    public User (String firstname, String lastname, String email,
+            String title, String date){
         this.firstName = firstname;
         this.lastName = lastname;
         this.email = email;

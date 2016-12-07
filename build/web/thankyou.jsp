@@ -13,8 +13,8 @@
 <section class="navButtons2"> 
     <section class="thankYou"> 
         Thank you for your patronage of the Belk Library. You've successfully
-        checked out the book, ${user.title}.  Please note that this book is due 
-        back on ${user.date} a friendly reminder will be sent to you if you your
+       checked out the book, ${user.title}.  Please note that this book is due 
+       back on ${user.date} a friendly reminder will be sent to you if you your
         book becomes overdue
     </section>
       <a id="returnButton" href="index.jsp">Return to front page</a>
